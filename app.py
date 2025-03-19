@@ -2,10 +2,6 @@ import streamlit as st
 import requests
 import json
 
-# Azure ML Endpoint Details
-AZURE_ENDPOINT = "https://credit-endpoint-c08cb3a0.eastus2.inference.ml.azure.com/score"
-API_KEY = "86qHUPz6PpDNKuOGVMw7nSnKT8Xb5cdgqYKYGTlHuAiJK1IYWlwhJQQJ99BCAAAAAAAAAAAAINFRAZML2WKy"  # Replace with your actual API key
-
 # Headers for request
 HEADERS = {
     "Content-Type": "application/json",
