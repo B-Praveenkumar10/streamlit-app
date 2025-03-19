@@ -2,10 +2,12 @@ import streamlit as st
 import requests
 import json
 
+AZURE_ENDPOINT = st.secrets["AZURE_ENDPOINT"]
+API_KEY = st.secrets["API_KEY"]
 # Headers for request
 HEADERS = {
     "Content-Type": "application/json",
-    "Authorization": f"Bearer {st.secrets["API_KEY"]}"
+    "Authorization": f"Bearer {API_KEY}"
 }
 
 # Streamlit UI
@@ -22,7 +24,7 @@ if st.button("Predict"):
         payload = json.loads(input_data)
 
         # Send request to Azure ML Endpoint
-        response = requests.post(st.secrets["AZURE_ENDPOINT"], headers=HEADERS, json=payload)
+        response = requests.post(AZURE_ENDPOINT, headers=HEADERS, json=payload)
 
         # Display Results
         if response.status_code == 200:
